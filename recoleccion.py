@@ -2,12 +2,14 @@ import json
 import requests
 import pandas as pd
 from deep_translator import GoogleTranslator
+from datetime import datetime
 
 API_KEY = "ab84d51392mshd0e6303e642d8d8p13d80bjsn6fb149d9a572"
 AUDIO = "spanish"
-ACTOR = "Keanu Reeves"
-URL_API = f"https://unogs-unogs-v1.p.rapidapi.com/search/titles?rapidapi-key={API_KEY}&audio={AUDIO}&person={ACTOR}"
-
+REPARTO = "will smith"
+LIMITE_REGISTROS = "1000"
+URL_API = f"https://unogs-unogs-v1.p.rapidapi.com/search/titles?rapidapi-key={API_KEY}&audio={AUDIO}&person={REPARTO}"
+HORA = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 results = dict()
 columns = ('title', 'year', 'synopsis')
 
@@ -43,14 +45,6 @@ for idx, item in enumerate(data.get('results', []), 1):
                     'synopsis': GoogleTranslator(source='auto', target='spanish').translate(synopsis)}
 
 df = pd.DataFrame(data=results, index=columns).T
-df.to_csv(f'peliculas/{ACTOR}.csv', index=False)
+df.to_csv(f'/Users/joseluissanmartin/Desktop/pythonProyects/recoleccionNetflix/peliculas/{LIMITE_REGISTROS}.csv', index=False)
 df
 
-
-# Traducir
-
-to_translate = 'I want to translate this text'
-translated = GoogleTranslator(source='auto', target='sp').translate(synopsis)
-# outpout -> Ich möchte diesen Text übersetzen
-
-print(translated)
