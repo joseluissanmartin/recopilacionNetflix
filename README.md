@@ -23,4 +23,6 @@ Los registros que conforman el objeto de la respuesta de la api son los siguient
 *   poster: poster promocional pelicula,
 *   top250: se desconoce,
 *   op250tv: se desconoce,
-*   title_date : fecha de estreno 
+*   title_date : fecha de estreno
+
+Adicionalmente debido a que la api tiene su respuesta en idioma ingles, se opto por usar una libreria de python "deep_translator" para llevar los titulos de las peliculas y descripcion al español
