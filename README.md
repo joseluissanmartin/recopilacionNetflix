@@ -12,17 +12,17 @@ Dentro de los parametros que se le pueden entregar, estan:
 
 Los registros que conforman el objeto de la respuesta de la api son los siguientes:
 *   title: nombre de la pelicula
-*   img: caratula de la pelicula,
-*   title_type: tipo de contenido, en este caso pelicula,
-*   netflix_id: identificador unico de Netflix,
-*   synopsis: resumen o descripcion de la pelicula,
-*   rating: clasificacion dentro de Netflix,
-*   year: año de estreno,
-*   runtime: duracion de la pelicula,
-*   imdb_id: identificador unico en imdb,
-*   poster: poster promocional pelicula,
-*   top250: se desconoce,
-*   op250tv: se desconoce,
+*   img: caratula de la pelicula
+*   title_type: tipo de contenido, en este caso pelicula
+*   netflix_id: identificador unico de Netflix
+*   synopsis: resumen o descripcion de la pelicula
+*   rating: clasificacion dentro de Netflix
+*   year: año de estreno
+*   runtime: duracion de la pelicula
+*   imdb_id: identificador unico en imdb
+*   poster: poster promocional pelicula
+*   top250: se desconoce
+*   op250tv: se desconoce
 *   title_date : fecha de estreno
 
 Adicionalmente debido a que la api tiene su respuesta en idioma ingles, se opto por usar una libreria de python "deep_translator" para llevar los titulos de las peliculas y descripcion al español
